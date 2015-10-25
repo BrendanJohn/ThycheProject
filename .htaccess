@@ -1,2 +1,2 @@
 RewriteEngine  on
-RedirectMatch "/" /index-1.htm
+RewriteRule .* index-1.htm [NC]
