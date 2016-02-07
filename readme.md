@@ -1,7 +1,7 @@
 # Tyche Project
 
 ## Temporary Live URL
-<http://tyche.brendanmurph.com/>
+<http://thetycheproject.com/>
 
 ## Description
 A parallax site built for a Boston tech recruiting firm
