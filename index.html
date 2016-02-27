@@ -23,7 +23,6 @@
       <script src="jquery/jquery-migrate.min.js-ver=1.2.1.js"></script>
       <script src="js/jpreloader.min.js"></script>
       <link rel="shortcut icon" href="images/Tyche_favicon.png" type="image/x-icon">
-      <link href="css/custom.css" type="text/css" rel="stylesheet" />
       <link href="css/media-queries.css" type="text/css" rel="stylesheet" />
       <link href="css/css-family=Oswald-400,700,300&subset=latin,latin-ext.css" type="text/css" rel="stylesheet" />
       <style type="text/css">
@@ -187,27 +186,23 @@
                <hgroup class="title">
                   <h1><strong class="white">Have a question?</strong></h1>
                </hgroup>
-               <div class="contactform">
-                  <form id="contactForm" method="post" action="http://startuptap.com/?">
-                     <label><input type="text"  name="contactName" id="contactName" class="requiredField" value="" placeholder="Your Name" /></label>
-                     <label><input type="text" name="email" id="email" value="" class="requiredField email" placeholder="Your Email" /></label>
-                     <label><textarea class="requiredField" name="comments" id="comments" placeholder="Message"></textarea></label>
-                     <input type="hidden" name="submitted" id="submitted" value="true" />
-                     <div class="clearfix"></div>
-                     <button type="submit" name="submit" id="submitMsg" class="large_btn contact-btn">Submit</button>
-                  </form>
-                  <script type="text/javascript">
-                     //Ajax feedback message
-                     var forgot_error="You forgot to enter";
-                     var email_error="You entered an invalid";
-                     var success="Thanks! Your email was successfully sent. I check my email all the time, so I should be in touch soon.";
-                     var verify="van_check.php.htm"/*tpa=http://startuptap.com/wp-content/themes/simplekey/functions/captcha/van_check.php*/;
-                     function refreshCaptcha(){
-                       var img = document.images["mycaptcha"];
-                       img.src = img.src.substring(0,img.src.lastIndexOf("?"))+"?rand="+Math.random()*1000;
-                     }
-                  </script>
-               </div>
+<div class="contactform">
+      <span class="error"></span>
+      <span class="error"></span>
+      <span class="error"></span>
+    
+  <form id="contactForm" method="post" action="./contact.php">
+   <input type="text"  name="contactName" id="contactName" class="requiredField" value="" placeholder="Your Name" />
+   <input type="text" name="email" id="email" value="" class="requiredField email" placeholder="Your Email" />
+   <textarea class="requiredField" name="comments" id="comments" placeholder="Message"></textarea>
+   <input type="hidden" name="submitted" id="submitted" value="true" />
+   <input type="hidden" name="__no_robots" value="nope" id="skNoRobots" />
+   <script type="text/javascript">
+     jQuery("#skNoRobots").val("sure");
+   </script>
+   <button type="submit" name="submit" id="submitMsg" class="large_btn contact-btn">Submit</button>
+ </form>
+</div>
                <div class="contactinfo">
                   <h2>Looking for a new/better Opportunity? <br><br>Just want to say Hello?</h2>
                   <p>Send us a message using the contact form. We never turn down a new introduction!
@@ -241,23 +236,23 @@
          var loadimg="loader2.gif"/*tpa=/images/loader2.gif*/;
          var isNiceScroll=1;
       </script>
-      <script type="text/javascript" src="/jquery/jquery.van.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.easing.min.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.placeholder.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.hoverIntent.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.scrollTo-1.4.3.1-min.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.localscroll-1.2.7-min.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.nicescroll.min.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.sticky.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.lazyload.min.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.flexslider-min.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.colorbox.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.isotope.min.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.contact-form.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.tweet.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.mobilemenu.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.superfish.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.parallax-1.1.3.js"></script>
-      <script type="text/javascript" src="/jquery/jquery.simplekey.js"></script>
+      <script type="text/javascript" src="jquery/jquery.van.js"></script>
+      <script type="text/javascript" src="jquery/jquery.easing.min.js"></script>
+      <script type="text/javascript" src="jquery/jquery.placeholder.js"></script>
+      <script type="text/javascript" src="jquery/jquery.hoverIntent.js"></script>
+      <script type="text/javascript" src="jquery/jquery.scrollTo-1.4.3.1-min.js"></script>
+      <script type="text/javascript" src="jquery/jquery.localscroll-1.2.7-min.js"></script>
+      <script type="text/javascript" src="jquery/jquery.nicescroll.min.js"></script>
+      <script type="text/javascript" src="jquery/jquery.sticky.js"></script>
+      <script type="text/javascript" src="jquery/jquery.lazyload.min.js"></script>
+      <script type="text/javascript" src="jquery/jquery.flexslider-min.js"></script>
+      <script type="text/javascript" src="jquery/jquery.colorbox.js"></script>
+      <script type="text/javascript" src="jquery/jquery.isotope.min.js"></script>
+      <script type="text/javascript" src="jquery/jquery.tweet.js"></script>
+      <script type="text/javascript" src="jquery/jquery.contact-form.js"></script>
+      <script type="text/javascript" src="jquery/jquery.mobilemenu.js"></script>
+      <script type="text/javascript" src="jquery/jquery.superfish.js"></script>
+      <script type="text/javascript" src="jquery/jquery.parallax-1.1.3.js"></script>
+      <script type="text/javascript" src="jquery/jquery.simplekey.js"></script>
    </body>
 </html>

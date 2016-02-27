@@ -11,7 +11,7 @@ jQuery(document).ready(function($){
 			if(jQuery.trim($(this).val()) == '') {
 				var labelText = $(this).attr('placeholder');
 				if($('.error')!==''){
-				  $(this).parent().before('<span class="error">'+forgot_error+' '+labelText+'.</span>');
+				  $(this).parent().before('<span class="error">You forgot to enter '+labelText+'.</span>');
 				}
 				hasError = true;
 			} else if($(this).hasClass('email')) {
@@ -19,43 +19,24 @@ jQuery(document).ready(function($){
 				if(!emailReg.test(jQuery.trim($(this).val()))) {
 					var labelText = $(this).attr('placeholder');
 					if($('.error')!==''){
-					  $(this).parent().before('<span class="error">'+email_error+' '+labelText+'.</span>');
+					  $(this).parent().before('<span class="error">You entered an invalid '+labelText+'.</span>');
 					}
 					hasError = true;
 				}
-			}  else if($(this).hasClass('captcha')) {
-				 var captcha = $(this).val();
-				 
-				 $.ajax({
-					type: "POST",
-					async:false,
-					cache:false,
-					url: verify,
-			        data:{code:captcha},
-					success:function(msg){
-					  var labelText = $('#captcha').attr('placeholder');
-						if(msg==0){
-						   if($('.error')!==''){	
-							  $('#captcha').parent().before('<span class="error">'+email_error+' '+labelText+'.</span>');
-						   }
-						   hasError = true;
-						}
-					 }
-		         });
-				
 			}
 		});
 		if(!hasError) {	
 			$('#contactForm #submitMsg').fadeOut('normal', function() {
-				$(this).parent().append('<img src="'+loadimg+'" />');
+				$(this).parent().append('<img src="'+loadimg+'" alt="Loading&hellip;" />');
 			});
 			var formInput = $(this).serialize();
 			$.post($(this).attr('action'),formInput, function(data){
 				$('form#contactForm').slideUp("fast", function() {		   
-					$(this).before('<span class="success">'+success+'</span>');
+					$(this).before('<span class="success">Thank you. I\'ll reply as soon as possible.</span>');
 				});
 			});
 		}
+		
 		return false;
 		
 	});
